@@ -1,12 +1,16 @@
-#include<iostream>
-using namespace std;
-
+#include "TabelaDisp.h"
+void inserir(seguimento*[], int);
 int main()
 {
 
-	//Marcio Bruno
+	
 
 	cout << "Hello World" << endl;
 	system("pause");
 	return 0;
+}
+void inserir(seguimento * dir[], int x)
+{
+	if (dir == nullptr)
+		dir = new seguimento[1];
 }
