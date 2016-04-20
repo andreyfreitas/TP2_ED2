@@ -13,6 +13,4 @@ void TabelaDisp::inserir(int)
 	
 }
 
-void TabelaDisp::remover(int)
-{
-}
+
