@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include<iostream>
 #include "TabelaDisp.h"
 
@@ -16,6 +17,18 @@ int main()
 
 	
 			
+=======
+#include "TabelaDisp.h"
+void inserir(seguimento*[], int);
+int main()
+{
+
+>>>>>>> origin/master
 	system("pause");
 	return 0;
+}
+void inserir(seguimento * dir[], int x)
+{
+	if (dir == nullptr)
+		dir = new seguimento[1];
 }
