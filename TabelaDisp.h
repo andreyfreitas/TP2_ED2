@@ -1,35 +1,43 @@
 #include <iostream>
+#include <random>
+#include <vector>
 using namespace std;
 
-const int TAMANHO_TABELA = 23;
+const int TAMANHO_SEG = 23;
 
-struct No
+struct Item
 {
-	int info;
-	No * next = nullptr;
+	int chave;
+	Item * next = nullptr;
 };
 
-struct Seguimento
+struct Seg
 {
-	No * vet[TAMANHO_TABELA] = { nullptr };
+	Item * vet[TAMANHO_SEG] = { nullptr };
 };
+
+//vector<Seg> Dir;
 
 
 class TabelaDisp
 {
 public:
 
-	int p = 0; //Expandir um compartimento p significa criar um novo compartimento q no final da tabela:
-	int l = 0; //o número de expansões da tabela:
-
 	TabelaDisp();
 	~TabelaDisp();
-	int funcao_Disp(No);
-	void inserir(No, Seguimento);
+	int funcao_Disp(int);
+	void inserir(Item, Seg, int, int);
+	
 	
 private:
+
+	int p = 0; //Expandir um compartimento p significa criar um novo compartimento q no final da tabela:
+	int l = 0; //o número de expansões da tabela:
+	int cont = 0;
+
 	int fator_carga();
 	void redimensao();
+
 
 };
 
