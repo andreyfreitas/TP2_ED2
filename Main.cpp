@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-#include<iostream>
 #include "TabelaDisp.h"
 
 using namespace std;
@@ -15,15 +13,6 @@ int main()
 		cout << i << endl;
 	}
 
-	
-			
-=======
-#include "TabelaDisp.h"
-void inserir(seguimento*[], int);
-int main()
-{
-
->>>>>>> origin/master
 	system("pause");
 	return 0;
 }
