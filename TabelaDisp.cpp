@@ -37,10 +37,38 @@ void TabelaDisp::inserir(Item, Seg, int l, int p) {
 		funcao_Disp(dist(mt));
 	}
 	
-		
-	
+}
 
-	
+//Metodos de setar e retornar valores das variaveis.
+
+void TabelaDisp::set_p(int novo_compart)
+{
+	p = novo_compart;
+}
+
+void TabelaDisp::set_l(int exp_tab)
+{
+	l = exp_tab;
+}
+
+void TabelaDisp::set_cont(int contador)
+{
+	cont = contador;
+}
+
+int TabelaDisp::get_p()
+{
+	return p;
+}
+
+int TabelaDisp::get_l()
+{
+	return l;
+}
+
+int TabelaDisp::get_cont()
+{
+	return cont;
 }
 
 

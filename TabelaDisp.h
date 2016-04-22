@@ -16,8 +16,6 @@ struct Seg
 	Item * vet[TAMANHO_SEG] = { nullptr };
 };
 
-//vector<Seg> Dir;
-
 
 class TabelaDisp
 {
@@ -27,13 +25,19 @@ public:
 	~TabelaDisp();
 	int funcao_Disp(int);
 	void inserir(Item, Seg, int, int);
+	void set_p(int novo_compart);
+	int get_p();
+	void set_l(int exp_tab);
+	int get_l();
+	void set_cont(int contador);
+	int get_cont();
 	
 	
 private:
 
-	int p = 0; //Expandir um compartimento p significa criar um novo compartimento q no final da tabela:
-	int l = 0; //o número de expansões da tabela:
-	int cont = 0;
+	int p; //Expandir um compartimento p significa criar um novo compartimento q no final da tabela:
+	int l; //o número de expansões da tabela:
+	int cont;
 
 	int fator_carga();
 	void redimensao();
