@@ -3,9 +3,9 @@
 int main()
 {
 
-	TabelaDisp * dir = new TabelaDisp();
-
+	TabelaDisp * tab = new TabelaDisp();
 	
+	tab->inserir();
 
 	system("pause");
 	return 0;
