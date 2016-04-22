@@ -29,8 +29,6 @@ void TabelaDisp::inserir(Item, Seg, int l, int p) {
 	mt19937 mt(3);
 	uniform_int_distribution<int> dist(1, 1000);
 
-	Item * item = new Item();
-
 	for (int i = 0; i < 1001; i++) {
 		cout << dist(mt) << endl;
 

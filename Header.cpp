@@ -117,6 +117,16 @@ bool apaga_node(Lista * li, int info)
 	}
 }
 		
-
+void imprime_lista(Lista * li)
+{
+	node * aux = *li;
+	cout << endl;
+	while (aux != nullptr)
+	{
+		cout << aux->data << " ";
+		aux = aux->next;
+	}
+	cout << endl;
+}
 	
 

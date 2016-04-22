@@ -16,15 +16,20 @@ int main()
 	li = copia_lista(lo);
 	libera_lista(lo);
 	cout << "A lista esta vazia: " << (bool)lista_vazia(lo) << endl;
-	apaga_node(li, 10);
+	apaga_node(li, 5);
 	cout << "Tamanho da lista = " << tamanho_lista(li) << endl;
 	cout << "A lista esta vazia: " << bool(lista_vazia(li)) << endl;
 	cout << "O numero 10 esta na lista: " << bool(consulta_lista(li, 10)) << endl;
 	cout << "O numero 5 esta na lista: " << (bool)consulta_lista(li, 5) << endl;
 	cout << "O numero 20 esta na lista: " << (bool)consulta_lista(li, 20) << endl;
 	cout << "A lista esta vazia: " << (bool)lista_vazia(li) << endl;
+	imprime_lista(li);
+	apaga_node(li, 40);
+	imprime_lista(li);
+
 	libera_lista(li);
 	cout << "A lista esta vazia: " << (bool)lista_vazia(li) << endl;
+	
 	system("pause");
 	return 0;
 }
