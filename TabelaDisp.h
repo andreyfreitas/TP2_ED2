@@ -5,17 +5,17 @@ using namespace std;
 
 const int TAMANHO_SEG = 23;
 
-struct Item_Lista
+struct No_Lista
 {
 	int chave;
-	Item_Lista * next;
+	No_Lista * next;
 };
 
-
-struct Seg
+struct Seg 
 {
-	Item_Lista * seg[TAMANHO_SEG] = {nullptr};
+	No_Lista * seg = new No_Lista();
 };
+
 
 
 class TabelaDisp
