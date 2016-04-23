@@ -27,6 +27,3 @@ bool apaga_node(Lista *, int);
 void imprime_lista(Lista *);
 void imprime_segmento(Lista *);
 int funcao_dispersao(int data);
-void mostra_colisoes(Lista *);
-bool inserir_diretorio(vector<Lista *> &, int data);
-bool libera_diretorio(vector<Lista*>);

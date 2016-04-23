@@ -136,22 +136,26 @@ bool inserir_segmento(Lista * li, int data)
 {
 	if (li == nullptr)
 		return false;
-
-	node * elem = new node;
-	if (elem == nullptr)
-		return false;
-	elem->data = data;
-	elem->next = nullptr;
-	if ((li[funcao_dispersao(data)] == nullptr))
-		li[funcao_dispersao(data)] = elem;
-	else
+	if ((cont_node)/ (TAM_TAB*(int)pow(2,level)) < 1)
 	{
-		node * aux = li[funcao_dispersao(data)];
-		while (aux->next != nullptr)
-			aux = aux->next;
-		aux->next = elem;
+		node * elem = new node;
+		if (elem == nullptr)
+			return false;
+		elem->data = data;
+		elem->next = nullptr;
+		if ((li[funcao_dispersao(data)] == nullptr))
+			li[funcao_dispersao(data)] = elem;
+		else
+		{
+			node * aux = li[funcao_dispersao(data)];
+			while (aux->next != nullptr)
+				aux = aux->next;
+			aux->next = elem;
+		}
+		cont_node++;
 	}
-	cont_node++;
+	
+	
 	return true;
 }
 
@@ -170,25 +174,27 @@ bool consulta_lista(Lista * li, int data)
 
 Lista * copia_lista(Lista * li)
 {
-	if (lista_vazia(li))
-		return 0;
-	Lista * copy = cria_lista();
-	node * aux = *li;
-	while (aux != nullptr)
+	if (segmento_vazio(li))
+		return nullptr;
+	Lista * copy = cria_segmento();
+	node * aux;
+	for (size_t i = 0; i < TAM_TAB; i++)
 	{
-		inserir_lista(copy, aux->data);
-		aux = aux->next;
+		aux = li[i];
+		while (aux != nullptr)
+		{
+			inserir_lista(copy, aux->data);
+			aux = aux->next;
+		}
 	}
-
 	return copy;
 }
 
 void inserir_copia_lista(Lista * &nova, Lista * copia)
 {
-
 	if (copia != nullptr || *copia != nullptr)
 	{
-		Lista * li = cria_lista();
+		Lista * li = cria_segmento();
 		node * aux = *nova;
 		while (aux != nullptr)
 		{
@@ -201,7 +207,7 @@ void inserir_copia_lista(Lista * &nova, Lista * copia)
 			inserir_lista(li, aux->data);
 			aux = aux->next;
 		}
-		libera_lista(nova);
+		libera_segmento(nova);
 		nova = li;
 	}
 		
@@ -263,36 +269,5 @@ void imprime_segmento(Lista * li)
 int funcao_dispersao(int data) 
 {
 	
-	return data/TAM_TAB*(int)pow(2,level) ;
-}
-
-void mostra_colisoes(Lista * li)
-{
-	for (size_t i = 0; i < TAM_TAB; i++)
-	{
-		imprime_lista(li + i);
-	}
-}
-
-bool inserir_diretorio(vector<Lista*> &dir, int data)
-{
-	if (dir.size() == 0)
-	{
-		dir.push_back(cria_segmento());
-	}
-	/*if (dir.size >= 1 && (int)cont_node / ((TAM_TAB * (int)pow(2, level)) >= 1)) 
-	{
-		for (size_t i = dir.size; i < dir.size * 2; i++)
-		{
-			dir[i] = cria_segmento();
-		}
-	}*/
-	inserir_segmento(dir[0], data);
-	return true;
-}
-
-bool libera_diretorio(vector<Lista*> dir)
-{
-	libera_segmento(dir[0]);
-	return true;
+	return data % (TAM_TAB * (int)pow(2,level));
 }
