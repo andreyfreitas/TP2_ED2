@@ -19,15 +19,3 @@ void inserir_copia_lista(Lista *&, Lista *);
 bool apaga_node(Lista *, int);
 void imprime_lista(Lista *);
 
-
-struct segment {
-	Lista vet[TAM_TAB];
-};
-typedef segment * Directory;
-
-Directory * cria_diretorio();
-void libera_dir(Directory *);
-int tamanho_dir(Directory *);
-bool inserir_dir(Directory *&, int);
-bool consultar_dir(Directory *, int, int);
-bool realocar_dir(Directory *, int, int);

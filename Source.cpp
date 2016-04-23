@@ -1,13 +1,27 @@
 #include"Header.h"
 int main()
 {
-	Directory * dir = cria_diretorio();
-	inserir_dir(dir, 12);
-	cout<<dir[0]->vet[12%TAM_TAB]->data<<endl;
-	libera_dir(dir);
+	Lista * li = cria_lista();
+	inserir_lista(li, 10);
+	li[1] = new node;
+	li[1]->data = 15;
+	li[1]->next = nullptr;
+	
+	inserir_lista(li, 20);
+	inserir_lista(li, 30);
+	inserir_lista(li, 40);
+	inserir_lista(li, 50);
+	cout << endl << tamanho_lista(li);
+	imprime_lista(li);
+	libera_lista(li);
 	system("pause");
 	return 0;
 }
+
+/*Directory * dir = cria_diretorio();
+	inserir_dir(dir, 12);
+	cout<<dir[0]->vet[12%TAM_TAB]->data<<endl;
+	libera_dir(dir);*/
 
 /*Lista * lo = cria_lista();
 Lista * li = cria_lista();
